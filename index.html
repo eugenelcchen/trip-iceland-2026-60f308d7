@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>冰島 12 天 11 夜 | 2025.2.17-3.1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --ice-white: #F8FCFD;
+            --sky-blue: #E3F2F7;
+            --glacier-light: #B8DDE8;
+            --glacier-blue: #5BA8C0;
+            --deep-blue: #3E7A91;
+            --accent-gold: #FDB462;
+            --text-dark: #1F3942;
+            --text-mid: #5A7A88;
+            --shadow-light: rgba(62, 122, 145, 0.08);
+            --shadow: rgba(62, 122, 145, 0.15);
+            --paid-green: #52C41A;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, var(--ice-white) 0%, var(--sky-blue) 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--glacier-blue) 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .menu-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .menu-btn:active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0.95);
+        }
+
+        .hamburger {
+            width: 20px;
+            height: 2px;
+            background: white;
+            position: relative;
+            display: block;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: white;
+            left: 0;
+        }
+
+        .hamburger::before {
+            top: -6px;
+        }
+
+        .hamburger::after {
+            bottom: -6px;
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 0.85rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            position: fixed;
+            left: -280px;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transition: left 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-menu.open {
+            left: 0;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .menu-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .menu-header {
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--glacier-blue) 100%);
+            color: white;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .close-btn:active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0.95);
+        }
+
+        .menu-nav {
+            padding: 1rem 0;
+        }
+
+        .menu-item {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: none;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            border-left: 4px solid transparent;
+        }
+
+        .menu-item:active {
+            background: var(--ice-blue);
+        }
+
+        .menu-item.active {
+            background: var(--ice-blue);
+            border-left-color: var(--accent-gold);
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .menu-item.active .menu-icon {
+            background: var(--accent-gold);
+        }
+
+        .menu-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .weather-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 16px var(--shadow);
+            animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .weather-card h3 {
+            color: var(--deep-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .weather-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .weather-item {
+            background: var(--ice-blue);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        .weather-label {
+            font-size: 0.8rem;
+            color: var(--text-mid);
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+        }
+
+        .weather-link {
+            display: block;
+            text-align: center;
+            color: var(--glacier-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.75rem;
+            background: var(--ice-blue);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .weather-link:active {
+            background: var(--glacier-blue);
+            color: white;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 16px var(--shadow);
+        }
+
+        .info-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-section h3 {
+            color: var(--deep-blue);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-section p {
+            color: var(--text-mid);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0.25rem 0;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .quick-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--ice-blue);
+            color: var(--glacier-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .quick-link:active {
+            transform: scale(0.95);
+            background: var(--glacier-blue);
+            color: white;
+        }
+
+        .calendar-section {
+            margin: 1.5rem 0;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 2px 16px var(--shadow-light);
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+            background: var(--warm-cream);
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .calendar-day.has-event {
+            background: var(--glacier-blue);
+            color: white;
+            font-weight: 600;
+        }
+
+        .calendar-day.has-event::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+        }
+
+        .calendar-day.active {
+            background: var(--deep-blue);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(42, 95, 117, 0.3);
+            border-color: var(--accent-gold);
+        }
+
+        .calendar-day:active {
+            transform: scale(0.95);
+        }
+
+        .calendar-day.disabled {
+            opacity: 0.3;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .day-label {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-bottom: 2px;
+        }
+
+        .itinerary-section {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .day-header {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .day-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .day-header .date {
+            color: var(--text-mid);
+            font-size: 0.9rem;
+        }
+
+        .inline-weather {
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4EBF3 100%);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0 1.5rem 0;
+            border-left: 4px solid var(--glacier-blue);
+        }
+
+        .weather-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .weather-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .weather-inline-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .weather-inline-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .weather-inline-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .weather-refresh {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: var(--glacier-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .weather-refresh:active {
+            background: var(--deep-blue);
+            transform: scale(0.98);
+        }
+
+        .activity-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ice-blue);
+        }
+
+        .activity-item:active {
+            transform: scale(0.98);
+        }
+
+        .activity-item.paid::before {
+            content: '已付款';
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: var(--paid-green);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .activity-time {
+            display: inline-block;
+            background: var(--glacier-blue);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-mid);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin: 0.5rem -0.5rem;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .activity-location:hover,
+        .activity-location:active {
+            background: rgba(74, 144, 164, 0.1);
+        }
+
+        .activity-location::before {
+            content: '📍';
+            font-size: 1rem;
+        }
+
+        .activity-location.clickable {
+            text-decoration: underline;
+            color: var(--glacier-blue);
+            font-weight: 500;
+        }
+
+        .activity-notes {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(74, 144, 164, 0.2);
+        }
+
+        .activity-price {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .no-selection {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-mid);
+        }
+
+        .no-selection .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .summary-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+            box-shadow: 0 2px 16px var(--shadow);
+        }
+
+        .summary-card h3 {
+            color: var(--deep-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--ice-blue);
+            color: var(--text-mid);
+            font-size: 0.9rem;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0 0.5rem 0;
+            margin-top: 0.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--deep-blue);
+        }
+
+        .summary-note {
+            font-size: 0.8rem;
+            color: var(--text-mid);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Team Tab Styles */
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 16px var(--shadow);
+        }
+
+        .team-card h2 {
+            color: var(--deep-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .team-member {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: var(--ice-blue);
+            border-radius: 12px;
+            border-left: 4px solid var(--glacier-blue);
+        }
+
+        .team-member:last-child {
+            margin-bottom: 0;
+        }
+
+        .member-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .member-role {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: var(--ice-blue);
+            border-radius: 12px;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-title {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .reminder-item {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: var(--ice-blue);
+            border-radius: 12px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .reminder-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .info-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem 0.5rem;
+            background: var(--ice-blue);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .info-link:active {
+            background: var(--glacier-blue);
+            transform: scale(0.95);
+        }
+
+        .link-icon {
+            font-size: 2rem;
+        }
+
+        .link-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .info-link:active .link-text {
+            color: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #1a2a35 0%, #2c3e4a 100%);
+            }
+            
+            .calendar-grid,
+            .itinerary-section {
+                background: #1e2f3b;
+                color: #e8f4f8;
+            }
+            
+            .activity-item {
+                background: #2a3f4d;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="menu-btn" onclick="toggleMenu()">
+            <span class="hamburger"></span>
+        </button>
+        <div class="header-content">
+            <h1>🇮🇸 Iceland Adventure</h1>
+        </div>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <div class="logo">🇮🇸</div>
+            <h3>Iceland 2026</h3>
+            <button class="close-btn" onclick="toggleMenu()">✕</button>
+        </div>
+        <nav class="menu-nav">
+            <button class="menu-item active" onclick="switchTab('itinerary')">
+                <span class="menu-icon">📅</span>
+                <span class="menu-text">行程總覽</span>
+            </button>
+            <button class="menu-item" onclick="switchTab('summary')">
+                <span class="menu-icon">💰</span>
+                <span class="menu-text">已付款總覽</span>
+            </button>
+            <button class="menu-item" onclick="switchTab('team')">
+                <span class="menu-icon">👥</span>
+                <span class="menu-text">團隊資訊</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+    <div class="container">
+        <!-- Itinerary Tab -->
+        <div id="itineraryTab" class="tab-content active">
+            <div class="calendar-grid" id="calendar"></div>
+        </div>
+
+        <!-- Weather Info Card -->
+        <div class="weather-card" id="weatherCard" style="display: none;">
+            <h3>🌤️ 當日天氣資訊</h3>
+            <div class="weather-grid">
+                <div class="weather-item">
+                    <div class="weather-label">天氣預報</div>
+                    <div class="weather-value" id="weatherForecast">-</div>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-label">體感溫度</div>
+                    <div class="weather-value" id="feelsLike">-</div>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-label">穿搭建議</div>
+                    <div class="weather-value" id="clothingSuggestion">-</div>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-label">極光指數</div>
+                    <div class="weather-value" id="auroraForecast">-</div>
+                </div>
+            </div>
+            <a href="#" id="weatherLink" target="_blank" class="weather-link">📱 查看完整天氣預報</a>
+        </div>
+
+        <div class="itinerary-section" id="itinerary">
+            <div class="no-selection">
+                <div class="icon">📅</div>
+                <p>點選日期查看當天行程</p>
+            </div>
+        </div>
+
+        <!-- Summary Card -->
+        </div>
+
+        <!-- Summary Tab -->
+        <div id="summaryTab" class="tab-content">
+            <div class="summary-card">
+                <h3>💰 已付款項目總覽</h3>
+                <div class="summary-item">
+                    <span>租車 (9G & HE)</span>
+                    <span>TWD 43,743</span>
+                </div>
+                <div class="summary-item">
+                    <span>租車 (UG & KB)</span>
+                    <span>TWD 43,743</span>
+                </div>
+                <div class="summary-item">
+                    <span>201hotel 住宿</span>
+                    <span>ISK 33,150 (約 TWD 7,300)</span>
+                </div>
+                <div class="summary-item">
+                    <span>Blue View Cabins</span>
+                    <span>TWD 13,749</span>
+                </div>
+                <div class="summary-item">
+                    <span>維克公寓</span>
+                    <span>TWD 15,630</span>
+                </div>
+                <div class="summary-item">
+                    <span>Hali Country Hotel</span>
+                    <span>TWD 12,800</span>
+                </div>
+                <div class="summary-item">
+                    <span>阿伯特科賓館</span>
+                    <span>TWD 14,546</span>
+                </div>
+                <div class="summary-item">
+                    <span>Hörgsland Cottages</span>
+                    <span>TWD 9,805</span>
+                </div>
+                <div class="summary-item">
+                    <span>Hótel Vík (2晚)</span>
+                    <span>TWD 47,812</span>
+                </div>
+                <div class="summary-item">
+                    <span>賽姆公寓式酒店</span>
+                    <span>TWD 10,954</span>
+                </div>
+                <div class="summary-item">
+                    <span>Snæfellsjökull Apartments</span>
+                    <span>TWD 7,771</span>
+                </div>
+                <div class="summary-item">
+                    <span>住宿 (UG/KB/PG)</span>
+                    <span>EUR 220 (約 TWD 7,700)</span>
+                </div>
+                <div class="summary-item">
+                    <span>Friðheimar 午餐</span>
+                    <span>已付款</span>
+                </div>
+                <div class="summary-item">
+                    <span>藍冰洞</span>
+                    <span>TWD 26,576</span>
+                </div>
+                <div class="summary-item">
+                    <span>Lava Show</span>
+                    <span>TWD 8,015</span>
+                </div>
+                <div class="summary-item">
+                    <span>冰川健行</span>
+                    <span>TWD 31,992</span>
+                </div>
+                <div class="summary-item">
+                    <span>Sky Lagoon</span>
+                    <span>ISK 69,950 (約 TWD 15,400)</span>
+                </div>
+                <div class="summary-total">
+                    <span>預估總花費</span>
+                    <span>約 TWD 317,500</span>
+                </div>
+                <p class="summary-note">*匯率參考：1 ISK ≈ 0.22 TWD, 1 EUR ≈ 35 TWD</p>
+                <p class="summary-note">*不含餐費、油費、購物</p>
+            </div>
+        </div>
+
+        <!-- Team Info Tab -->
+        <div id="teamTab" class="tab-content">
+            <div class="team-card">
+                <h2>👥 團隊成員</h2>
+                <div class="team-member">
+                    <div class="member-name">Eugene (UG)</div>
+                    <div class="member-role">02/17-03/01</div>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">Caber (KB)</div>
+                    <div class="member-role">02/17-03/01</div>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">PG (PG)</div>
+                    <div class="member-role">02/17-02/28</div>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">George (9G)</div>
+                    <div class="member-role">02/17-02/28</div>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">He</div>
+                    <div class="member-role">02/17-02/28</div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <h2>📞 緊急聯絡</h2>
+                <div class="contact-item">
+                    <div class="contact-icon">🚨</div>
+                    <div class="contact-info">
+                        <div class="contact-title">冰島緊急電話</div>
+                        <div class="contact-value">112</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🚗</div>
+                    <div class="contact-info">
+                        <div class="contact-title">租車公司 Enterprise</div>
+                        <div class="contact-value">見確認信</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <h2>⚠️ 重要提醒</h2>
+                <div class="reminder-item">📋 需帶國際駕照、墨鏡、雪靴</div>
+                <div class="reminder-item">🧴 自備沐浴乳、牙膏牙刷</div>
+                <div class="reminder-item">🕐 注意各飯店 check-in/out 時間</div>
+            </div>
+
+            <div class="team-card">
+                <h2>🔗 常用連結</h2>
+                <div class="link-grid">
+                    <a href="https://www.vedur.is/en/" target="_blank" class="info-link">
+                        <div class="link-icon">🌤️</div>
+                        <div class="link-text">天氣預報</div>
+                    </a>
+                    <a href="https://safetravel.is/" target="_blank" class="info-link">
+                        <div class="link-icon">🚨</div>
+                        <div class="link-text">路況查詢</div>
+                    </a>
+                    <a href="https://en.vedur.is/weather/forecasts/aurora/" target="_blank" class="info-link">
+                        <div class="link-icon">✨</div>
+                        <div class="link-text">極光預報</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const itineraryData = {
+            "2026-02-17": {
+                day: "Day 1",
+                weekday: "週二",
+                activities: [
+                    {
+                        time: "10:55",
+                        title: "9G & HE 抵達雷克雅維克機場",
+                        location: "Keflavík International Airport",
+                        coords: "63.985,-22.605",
+                        notes: "租車 Enterprise 11:30 | 保險、國際駕照",
+                        paid: true,
+                        price: "TWD 43,743"
+                    },
+                    {
+                        time: "15:20",
+                        title: "UG & KB 抵達雷克雅維克機場",
+                        location: "Keflavík International Airport",
+                        coords: "63.985,-22.605",
+                        notes: "租車 Enterprise 16:00",
+                        paid: true,
+                        price: "TWD 43,743"
+                    },
+                    {
+                        title: "採購",
+                        notes: "Bonus or Costco - 墨鏡、雪靴、現金"
+                    },
+                    {
+                        title: "住宿",
+                        location: "201hotel",
+                        url: "https://maps.app.goo.gl/fRNDpTjfvJLWqq5u6",
+                        notes: "沒廚房，需帶沐浴乳、牙膏牙刷",
+                        paid: true,
+                        price: "ISK 33,150 (約 TWD 7,300)"
+                    }
+                ]
+            },
+            "2026-02-18": {
+                day: "Day 2",
+                weekday: "週三",
+                activities: [
+                    {
+                        time: "10:50",
+                        title: "PG 抵達雷克雅維克機場",
+                        location: "Keflavík International Airport",
+                        coords: "63.985,-22.605"
+                    },
+                    {
+                        time: "下午",
+                        title: "黃金圈 - 辛格韋德利國家公園",
+                        location: "Þingvellir National Park",
+                        url: "https://maps.app.goo.gl/4Yt49NfMVx9kaNnx6",
+                        notes: "往黃金圈走36號公路，約1小時車程，法律岩"
+                    },
+                    {
+                        time: "晚餐",
+                        title: "Restaurant Mika",
+                        location: "Restaurant Mika",
+                        url: "https://maps.app.goo.gl/paHBhwaTFAvdJdea9",
+                        notes: "或 Fish & Chips - Reykholt Hub"
+                    },
+                    {
+                        title: "住宿",
+                        location: "Blue View Cabins",
+                        url: "https://www.airbnb.com.tw/rooms/1495605244634831175",
+                        notes: "有廚房，沒早餐，沒沐浴乳和洗衣機",
+                        paid: true,
+                        price: "TWD 13,749"
+                    }
+                ]
+            },
+            "2026-02-19": {
+                day: "Day 3",
+                weekday: "週四",
+                activities: [
+                    {
+                        time: "上午",
+                        title: "黃金圈 - 北上瀑布噴泉",
+                        notes: "355公路，2小時車程，摸黑出門 9:03 天亮"
+                    },
+                    {
+                        time: "12:30",
+                        title: "午餐 - Friðheimar 蕃茄餐廳",
+                        location: "Friðheimar",
+                        url: "https://maps.app.goo.gl/vJYa7FQWGpHZW8XB6",
+                        paid: true
+                    },
+                    {
+                        time: "下午",
+                        title: "火口湖往維克",
+                        notes: "1號公路前往維克，約2.5小時車程"
+                    },
+                    {
+                        time: "晚餐",
+                        title: "The Soup Company",
+                        location: "The Soup Company, Vík",
+                        url: "https://maps.app.goo.gl/zxbGVHEAr4Ft7eWD9"
+                    },
+                    {
+                        title: "採購",
+                        location: "Krónan Vík",
+                        url: "https://maps.app.goo.gl/uKn8mYdx9hzE6fJn6",
+                        notes: "21:00關門，採買隔天早餐*2、午餐、晚餐"
+                    },
+                    {
+                        title: "住宿",
+                        location: "維克公寓",
+                        url: "https://maps.app.goo.gl/zMnhXVrT8jU3P5br9",
+                        notes: "有廚房",
+                        paid: true,
+                        price: "TWD 15,630"
+                    }
+                ]
+            },
+            "2026-02-20": {
+                day: "Day 4",
+                weekday: "週五",
+                activities: [
+                    {
+                        time: "上午",
+                        title: "往藍冰洞集合地點",
+                        notes: "早午餐從 Krónan Vík 買好，2小時車程"
+                    },
+                    {
+                        time: "16:00",
+                        title: "藍冰洞",
+                        url: "https://maps.app.goo.gl/CqRWX3LfYqLNeGM16",
+                        notes: "需提早15分鐘到",
+                        paid: true,
+                        price: "TWD 26,576"
+                    },
+                    {
+                        title: "住宿",
+                        location: "Hali Country Hotel",
+                        url: "https://maps.app.goo.gl/bdBvi1ndUFHQfnBy7",
+                        notes: "有早餐",
+                        paid: true,
+                        price: "TWD 12,800"
+                    }
+                ]
+            },
+            "2026-02-21": {
+                day: "Day 5",
+                weekday: "週六",
+                activities: [
+                    {
+                        time: "上午",
+                        title: "前往赫本",
+                        notes: "早餐吃飯店，路過赫本覓食"
+                    },
+                    {
+                        time: "午餐",
+                        title: "Pakkhús Restaurant",
+                        location: "Pakkhús Restaurant, Höfn",
+                        url: "https://maps.app.goo.gl/HuwWm6wcan1gTZJs5"
+                    },
+                    {
+                        time: "下午",
+                        title: "採購 - Nettó",
+                        url: "https://maps.app.goo.gl/65yBqZie7JLAPKyB9",
+                        notes: "19:00關門，採買當天晚餐、隔天午餐晚餐、後天早餐"
+                    },
+                    {
+                        title: "住宿",
+                        location: "阿伯特科賓館",
+                        url: "https://maps.app.goo.gl/kQzot7KmQk2C1HJs6",
+                        notes: "16:00 check-in, 11:00 check-out，有公共廚房，早餐牛奶麥片蛋糕",
+                        paid: true,
+                        price: "TWD 14,546"
+                    }
+                ]
+            },
+            "2026-02-22": {
+                day: "Day 6",
+                weekday: "週日",
+                activities: [
+                    {
+                        time: "09:00",
+                        title: "出發",
+                        notes: "早餐吃飯店提供的牛奶麥片蛋糕"
+                    },
+                    {
+                        time: "午餐",
+                        title: "午餐吃自己",
+                        notes: "自己包三明治"
+                    },
+                    {
+                        time: "下午",
+                        title: "Vestrahorn Mountain",
+                        location: "Vestrahorn Mountain",
+                        url: "https://maps.app.goo.gl/s9Kq1xbNt8HJFf8Z8",
+                        notes: "13:00前要離開，可中停鑽石冰沙灘(有廁所)"
+                    },
+                    {
+                        title: "前往住宿",
+                        notes: "約4小時車程"
+                    },
+                    {
+                        title: "住宿",
+                        location: "Hörgsland Cottages",
+                        url: "https://maps.app.goo.gl/98Bzf6kBS4QUVCzh6",
+                        notes: "15:00 check-in, 11:00 check-out，有廚房，沒早餐",
+                        paid: true,
+                        price: "TWD 9,805"
+                    }
+                ]
+            },
+            "2026-02-23": {
+                day: "Day 7",
+                weekday: "週一",
+                activities: [
+                    {
+                        time: "上午",
+                        title: "往維克",
+                        notes: "早餐吃自己，約2小時車程"
+                    },
+                    {
+                        time: "12:00",
+                        title: "午餐 - Black Crust Pizzeria",
+                        location: "Black Crust Pizzeria, Vík",
+                        url: "https://maps.app.goo.gl/u5C5m29px9nMxjqU9"
+                    },
+                    {
+                        time: "15:00",
+                        title: "Lava Show",
+                        url: "https://maps.app.goo.gl/vreqtVFx7igXsZzo6",
+                        notes: "約1小時",
+                        paid: true,
+                        price: "TWD 8,015"
+                    },
+                    {
+                        time: "下午",
+                        title: "Black Sand Beach",
+                        location: "Reynisfjara Black Sand Beach",
+                        url: "https://maps.app.goo.gl/RNyBujfYB3rK3vzs8"
+                    },
+                    {
+                        time: "晚餐",
+                        title: "採購 - Krónan Vík",
+                        notes: "超市採買晚餐、隔天午餐"
+                    },
+                    {
+                        title: "住宿",
+                        location: "Hótel Vík",
+                        url: "https://maps.app.goo.gl/sVg9u6KGxiJhQQ6W9",
+                        notes: "16:00 check-in，可以洗衣服，有早餐",
+                        paid: true,
+                        price: "TWD 47,812"
+                    }
+                ]
+            },
+            "2026-02-24": {
+                day: "Day 8",
+                weekday: "週二",
+                activities: [
+                    {
+                        time: "07:00-10:00",
+                        title: "飯店早餐"
+                    },
+                    {
+                        time: "10:15",
+                        title: "冰川健行",
+                        location: "Arctic Adventures - Sólheimajökull Base",
+                        url: "https://maps.app.goo.gl/WSqDFREpniRXgYwg6",
+                        notes: "2-3小時",
+                        paid: true,
+                        price: "TWD 31,992"
+                    },
+                    {
+                        time: "午餐",
+                        title: "吃超市"
+                    },
+                    {
+                        time: "16:45",
+                        title: "騎馬體驗",
+                        location: "Vík Horse Adventure",
+                        url: "https://maps.app.goo.gl/4KqqvJvQFZ99njAU6"
+                    },
+                    {
+                        time: "晚餐",
+                        title: "Restaurant Suður-Vík",
+                        location: "Restaurant Suður-Vík",
+                        url: "https://maps.app.goo.gl/A1mthsikYGDE5zcM7"
+                    },
+                    {
+                        title: "住宿",
+                        location: "Hótel Vík",
+                        url: "https://maps.app.goo.gl/sVg9u6KGxiJhQQ6W9",
+                        notes: "11:00 check-out"
+                    }
+                ]
+            },
+            "2026-02-25": {
+                day: "Day 9",
+                weekday: "週三",
+                activities: [
+                    {
+                        time: "07:00-10:00",
+                        title: "飯店早餐"
+                    },
+                    {
+                        time: "10:00",
+                        title: "往雷克雅維克",
+                        notes: "約2.5小時車程，會經過兩個瀑布和 Bonus"
+                    },
+                    {
+                        time: "午餐",
+                        title: "午餐參考",
+                        url: "https://maps.app.goo.gl/YNMDP4WCa6CuQbWL7"
+                    },
+                    {
+                        time: "下午",
+                        title: "勞格威格爾購物街"
+                    },
+                    {
+                        time: "17:00",
+                        title: "Sky Lagoon",
+                        url: "https://www.skylagoon.com/",
+                        notes: "22:00關門",
+                        paid: true,
+                        price: "ISK 69,950 (約 TWD 15,400)"
+                    },
+                    {
+                        title: "住宿",
+                        location: "賽姆公寓式酒店 (Sem Apartments)",
+                        url: "https://maps.app.goo.gl/HLkgGif6sMKzVeKP7",
+                        notes: "有廚房，可以洗衣服，沒有早餐",
+                        paid: true,
+                        price: "TWD 10,954"
+                    }
+                ]
+            },
+            "2026-02-26": {
+                day: "Day 10",
+                weekday: "週四",
+                activities: [
+                    {
+                        time: "上午",
+                        title: "往斯奈山半島",
+                        notes: "約3小時車程"
+                    },
+                    {
+                        time: "午餐",
+                        title: "Bónus 採購",
+                        notes: "買晚餐和隔天早餐食材"
+                    },
+                    {
+                        time: "下午",
+                        title: "Ytri Tunga 海豹灘",
+                        location: "Ytri Tunga",
+                        url: "https://maps.app.goo.gl/DPPmdsUSLt4yw9zVA"
+                    },
+                    {
+                        title: "Ingjaldshólskirkja 教堂",
+                        location: "Ingjaldshólskirkja",
+                        url: "https://maps.app.goo.gl/aP6NUbU17eeNZAzY8"
+                    },
+                    {
+                        time: "晚餐",
+                        title: "自己煮"
+                    },
+                    {
+                        title: "住宿",
+                        location: "Snæfellsjökull Apartments",
+                        url: "https://maps.app.goo.gl/33VdHatseN4jKZ4p8",
+                        notes: "斯奈山半島附近，有廚房，沒洗衣機",
+                        paid: true,
+                        price: "TWD 7,771"
+                    }
+                ]
+            },
+            "2026-02-27": {
+                day: "Day 11",
+                weekday: "週五",
+                activities: [
+                    {
+                        time: "上午",
+                        title: "返回雷克雅維克",
+                        notes: "約3小時車程"
+                    },
+                    {
+                        title: "Harpa 音樂廳",
+                        location: "Harpa Concert Hall",
+                        url: "https://maps.app.goo.gl/6KUCYzMvRLdFjF8AA"
+                    },
+                    {
+                        time: "下午",
+                        title: "買伴手禮"
+                    },
+                    {
+                        title: "住宿 (9G & HE)",
+                        location: "Aurora Hotel at Reykjavik-Keflavik Airport Terminal KEF",
+                        url: "https://maps.app.goo.gl/NzY8WqxJvHxyY6Ae8"
+                    },
+                    {
+                        title: "住宿 (UG/KB/PG)",
+                        notes: "2/26之前免費取消",
+                        paid: true,
+                        price: "EUR 220 (約 TWD 7,700)"
+                    }
+                ]
+            },
+            "2026-02-28": {
+                day: "Day 12",
+                weekday: "週六",
+                activities: [
+                    {
+                        time: "07:35",
+                        title: "9G & HE 離開雷克雅維克機場",
+                        location: "Keflavík International Airport",
+                        coords: "63.985,-22.605"
+                    },
+                    {
+                        title: "PG 班機",
+                        notes: "下午或 3/1 離開"
+                    }
+                ]
+            },
+            "2026-03-01": {
+                day: "Day 13",
+                weekday: "週日",
+                activities: [
+                    {
+                        time: "07:30",
+                        title: "UG & KB 離開雷克雅維克機場",
+                        location: "Keflavík International Airport",
+                        coords: "63.985,-22.605"
+                    }
+                ]
+            }
+        };
+
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+            const startDate = new Date('2026-02-17');
+            const endDate = new Date('2026-03-01');
+            
+            // Add day headers (Sunday first)
+            const days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+            days.forEach(day => {
+                const header = document.createElement('div');
+                header.className = 'calendar-day disabled';
+                header.innerHTML = `<div class="day-label">${day}</div>`;
+                calendar.appendChild(header);
+            });
+
+            // Calculate days to show
+            const firstDay = startDate.getDay();
+            
+            // Add empty cells before first date
+            for (let i = 0; i < firstDay; i++) {
+                const empty = document.createElement('div');
+                empty.className = 'calendar-day disabled';
+                calendar.appendChild(empty);
+            }
+
+            // Add date cells
+            let currentDate = new Date(startDate);
+            while (currentDate <= endDate) {
+                const dateStr = currentDate.toISOString().split('T')[0];
+                const day = document.createElement('div');
+                day.className = 'calendar-day has-event';
+                
+                day.innerHTML = `<div>${currentDate.getDate()}</div>`;
+                day.dataset.date = dateStr;
+                
+                day.addEventListener('click', () => showItinerary(dateStr));
+                
+                calendar.appendChild(day);
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+        }
+
+        async function showItinerary(dateStr) {
+            // Update active state
+            document.querySelectorAll('.calendar-day').forEach(day => {
+                day.classList.remove('active');
+            });
+            document.querySelector(`[data-date="${dateStr}"]`)?.classList.add('active');
+
+            // Update weather info (async)
+            const weather = await updateWeatherInfo(dateStr);
+
+            const itinerary = document.getElementById('itinerary');
+            const data = itineraryData[dateStr];
+
+            if (!data) {
+                itinerary.innerHTML = `
+                    <div class="no-selection">
+                        <div class="icon">🏔️</div>
+                        <p>這天沒有安排行程</p>
+                    </div>
+                `;
+                document.getElementById('weatherCard').style.display = 'none';
+                return;
+            }
+
+            const date = new Date(dateStr);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const formattedDate = `${year}.${month}.${day}`;
+
+            // Build weather info inline
+            let weatherHTML = '';
+            if (weather) {
+                weatherHTML = `
+                    <div class="inline-weather">
+                        <div class="weather-row">
+                            <div class="weather-inline-item">
+                                <span class="weather-inline-icon">🌤️</span>
+                                <span class="weather-inline-text">${weather.forecast}</span>
+                            </div>
+                            <div class="weather-inline-item">
+                                <span class="weather-inline-icon">🌡️</span>
+                                <span class="weather-inline-text">體感 ${weather.feelsLike}</span>
+                            </div>
+                        </div>
+                        <div class="weather-row">
+                            <div class="weather-inline-item">
+                                <span class="weather-inline-icon">👔</span>
+                                <span class="weather-inline-text">${weather.clothing}</span>
+                            </div>
+                            <div class="weather-inline-item">
+                                <span class="weather-inline-icon">✨</span>
+                                <span class="weather-inline-text">極光 ${weather.aurora}</span>
+                            </div>
+                        </div>
+                        <a href="https://www.vedur.is/en/weather/forecasts/areas/" target="_blank" class="weather-refresh">
+                            🔄 查看即時預報
+                        </a>
+                    </div>
+                `;
+            }
+
+            let html = `
+                <div class="day-header">
+                    <h2>${data.day}</h2>
+                    <div class="date">${formattedDate} ${data.weekday}</div>
+                </div>
+                ${weatherHTML}
+            `;
+
+            data.activities.forEach((activity, index) => {
+                const isPaid = activity.paid ? 'paid' : '';
+                html += `<div class="activity-item ${isPaid}">`;
+                
+                if (activity.time) {
+                    html += `<div class="activity-time">${activity.time}</div>`;
+                }
+                
+                html += `<div class="activity-title">${activity.title}</div>`;
+                
+                if (activity.location) {
+                    const hasCoords = activity.coords || activity.url;
+                    const locationClass = hasCoords ? 'activity-location clickable' : 'activity-location';
+                    const onClick = hasCoords ? `onclick="openMap('${activity.coords || ''}', '${activity.url || ''}', '${activity.location}')"` : '';
+                    html += `<div class="${locationClass}" ${onClick}>${activity.location}</div>`;
+                }
+                
+                if (activity.notes) {
+                    html += `<div class="activity-notes">${activity.notes}</div>`;
+                }
+                
+                if (activity.price) {
+                    html += `<div class="activity-price">${activity.price}</div>`;
+                }
+                
+                html += `</div>`;
+            });
+
+            itinerary.innerHTML = html;
+            
+            // Hide the separate weather card
+            document.getElementById('weatherCard').style.display = 'none';
+        }
+
+        function openMap(coords, url, name) {
+            if (url) {
+                window.open(url, '_blank');
+            } else if (coords) {
+                const [lat, lng] = coords.split(',');
+                window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`, '_blank');
+            } else {
+                window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`, '_blank');
+            }
+        }
+
+        // Initialize
+        generateCalendar();
+        
+        // Auto-select first day
+        setTimeout(() => {
+            showItinerary('2026-02-17');
+        }, 100);
+
+        // Tab switching
+        function switchTab(tabName) {
+            // Update menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.closest('.menu-item').classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            if (tabName === 'itinerary') {
+                document.getElementById('itineraryTab').classList.add('active');
+            } else if (tabName === 'summary') {
+                document.getElementById('summaryTab').classList.add('active');
+            } else if (tabName === 'team') {
+                document.getElementById('teamTab').classList.add('active');
+            }
+
+            // Close menu
+            toggleMenu();
+        }
+
+        // Toggle side menu
+        function toggleMenu() {
+            const menu = document.getElementById('sideMenu');
+            const overlay = document.getElementById('menuOverlay');
+            
+            menu.classList.toggle('open');
+            overlay.classList.toggle('show');
+        }
+
+        // Weather API integration
+        // Using Vedur.is (Iceland Met Office) unofficial API
+        async function fetchWeatherData(dateStr) {
+            try {
+                // Get weather from Iceland Met Office
+                // Note: This is a simplified example. For production, you'd want to:
+                // 1. Use proper API endpoints with coordinates for each location
+                // 2. Handle rate limiting and caching
+                // 3. Add fallback data if API fails
+                
+                const date = new Date(dateStr);
+                const now = new Date();
+                const daysDiff = Math.floor((date - now) / (1000 * 60 * 60 * 24));
+                
+                // If date is more than 10 days away, show generic forecast
+                if (daysDiff > 10 || daysDiff < -1) {
+                    return getFallbackWeather(dateStr);
+                }
+                
+                // Reykjavik coordinates for general Iceland weather
+                const lat = 64.1466;
+                const lon = -21.9426;
+                
+                // Try to fetch from Open-Meteo (free, no API key needed)
+                const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode,windspeed_10m_max&timezone=Atlantic/Reykjavik&forecast_days=16`;
+                
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Weather API failed');
+                
+                const data = await response.json();
+                const dateIndex = data.daily.time.indexOf(dateStr);
+                
+                if (dateIndex === -1) return getFallbackWeather(dateStr);
+                
+                const tempMax = Math.round(data.daily.temperature_2m_max[dateIndex]);
+                const tempMin = Math.round(data.daily.temperature_2m_min[dateIndex]);
+                const weatherCode = data.daily.weathercode[dateIndex];
+                const windSpeed = Math.round(data.daily.windspeed_10m_max[dateIndex]);
+                
+                // Convert weather code to description
+                const weatherDesc = getWeatherDescription(weatherCode);
+                
+                // Calculate feels like (simplified - actual temp minus wind chill factor)
+                const feelsLike = Math.round(tempMin - windSpeed * 0.3);
+                
+                // Get clothing suggestion based on temp and wind
+                const clothing = getClothingSuggestion(tempMin, tempMax, windSpeed);
+                
+                // Aurora forecast (KP index would need separate API - using estimate)
+                const aurora = getAuroraEstimate(date);
+                
+                return {
+                    forecast: `${weatherDesc} ${tempMin}°C ~ ${tempMax}°C`,
+                    feelsLike: `${feelsLike}°C`,
+                    clothing: clothing,
+                    aurora: aurora
+                };
+                
+            } catch (error) {
+                console.error('Weather fetch error:', error);
+                return getFallbackWeather(dateStr);
+            }
+        }
+        
+        function getWeatherDescription(code) {
+            const weatherCodes = {
+                0: '晴朗',
+                1: '大致晴朗', 2: '部分多雲', 3: '陰天',
+                45: '有霧', 48: '結霜霧',
+                51: '小雨', 53: '中雨', 55: '大雨',
+                61: '小雨', 63: '中雨', 65: '大雨',
+                71: '小雪', 73: '中雪', 75: '大雪',
+                80: '陣雨', 81: '中陣雨', 82: '大陣雨',
+                95: '雷雨', 96: '雷雨伴冰雹'
+            };
+            return weatherCodes[code] || '多雲';
+        }
+        
+        function getClothingSuggestion(tempMin, tempMax, windSpeed) {
+            const avgTemp = (tempMin + tempMax) / 2;
+            
+            if (windSpeed > 15) {
+                return "防風外套、多層保暖、手套";
+            } else if (avgTemp < -5) {
+                return "雪衣、保暖褲、雪靴、毛帽";
+            } else if (avgTemp < 0) {
+                return "厚外套、保暖層、防風";
+            } else if (avgTemp < 5) {
+                return "厚外套、保暖層";
+            } else {
+                return "外套、長袖、視需求加保暖層";
+            }
+        }
+        
+        function getAuroraEstimate(date) {
+            // Simplified aurora forecast based on moon phase and season
+            // Real implementation would use KP index API from spaceweather.com
+            const month = date.getMonth();
+            const isWinterMonth = month >= 9 || month <= 3; // Oct-Apr best
+            const dayOfMonth = date.getDate();
+            const isNewMoon = dayOfMonth >= 10 && dayOfMonth <= 20; // Rough estimate
+            
+            if (!isWinterMonth) return "低 (1-2/9)";
+            if (isNewMoon) return "高 (6-7/9)";
+            return "中等 (4-5/9)";
+        }
+        
+        function getFallbackWeather(dateStr) {
+            // Fallback data if API fails or date too far out
+            return weatherData[dateStr] || {
+                forecast: "請查詢最新預報",
+                feelsLike: "-",
+                clothing: "多層穿搭備用",
+                aurora: "查詢即時預報"
+            };
+        }
+        
+        // Keep original data as fallback
+        const weatherData = {
+            "2026-02-17": {
+                forecast: "多雲轉晴 -2°C ~ 3°C",
+                feelsLike: "-5°C",
+                clothing: "厚外套、保暖層、防風",
+                aurora: "中等 (3/9)"
+            },
+            "2026-02-18": {
+                forecast: "晴朗 -1°C ~ 4°C",
+                feelsLike: "-4°C",
+                clothing: "厚外套、毛帽、手套",
+                aurora: "高 (6/9)"
+            },
+            "2026-02-19": {
+                forecast: "陰天有雪 -3°C ~ 1°C",
+                feelsLike: "-7°C",
+                clothing: "雪衣、保暖褲、雪靴",
+                aurora: "低 (2/9)"
+            },
+            "2026-02-20": {
+                forecast: "多雲 -2°C ~ 2°C",
+                feelsLike: "-6°C",
+                clothing: "多層穿搭、防風外套",
+                aurora: "中等 (4/9)"
+            },
+            "2026-02-21": {
+                forecast: "晴朗 0°C ~ 5°C",
+                feelsLike: "-3°C",
+                clothing: "厚外套、保暖層",
+                aurora: "高 (7/9)"
+            },
+            "2026-02-22": {
+                forecast: "陰天 -1°C ~ 3°C",
+                feelsLike: "-5°C",
+                clothing: "防風外套、保暖層",
+                aurora: "中等 (5/9)"
+            },
+            "2026-02-23": {
+                forecast: "多雲轉晴 1°C ~ 6°C",
+                feelsLike: "-2°C",
+                clothing: "外套、保暖層",
+                aurora: "中等 (4/9)"
+            },
+            "2026-02-24": {
+                forecast: "晴朗 2°C ~ 7°C",
+                feelsLike: "-1°C",
+                clothing: "外套、長袖",
+                aurora: "高 (6/9)"
+            },
+            "2026-02-25": {
+                forecast: "多雲 0°C ~ 4°C",
+                feelsLike: "-4°C",
+                clothing: "厚外套、保暖層",
+                aurora: "中等 (5/9)"
+            },
+            "2026-02-26": {
+                forecast: "陰天有雨 1°C ~ 5°C",
+                feelsLike: "-3°C",
+                clothing: "防水外套、保暖層",
+                aurora: "低 (2/9)"
+            },
+            "2026-02-27": {
+                forecast: "多雲 0°C ~ 4°C",
+                feelsLike: "-4°C",
+                clothing: "外套、保暖層",
+                aurora: "中等 (4/9)"
+            },
+            "2026-02-28": {
+                forecast: "晴朗 1°C ~ 5°C",
+                feelsLike: "-2°C",
+                clothing: "外套、長袖",
+                aurora: "高 (6/9)"
+            },
+            "2026-03-01": {
+                forecast: "多雲 2°C ~ 6°C",
+                feelsLike: "-1°C",
+                clothing: "外套、保暖層",
+                aurora: "中等 (5/9)"
+            }
+        };
+
+        async function updateWeatherInfo(dateStr) {
+            const weatherCard = document.getElementById('weatherCard');
+            
+            // Fetch fresh weather data
+            const weather = await fetchWeatherData(dateStr);
+
+            if (weather) {
+                document.getElementById('weatherForecast').textContent = weather.forecast;
+                document.getElementById('feelsLike').textContent = weather.feelsLike;
+                document.getElementById('clothingSuggestion').textContent = weather.clothing;
+                document.getElementById('auroraForecast').textContent = weather.aurora;
+                
+                // Update weather link
+                document.getElementById('weatherLink').href = 'https://www.vedur.is/en/weather/forecasts/areas/';
+                
+                weatherCard.style.display = 'block';
+            } else {
+                weatherCard.style.display = 'none';
+            }
+            
+            return weather;
+        }
+    </script>
+</body>
+</html>
