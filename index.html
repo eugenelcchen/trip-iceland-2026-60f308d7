@@ -873,119 +873,176 @@
         <!-- Itinerary Tab -->
         <div id="itineraryTab" class="tab-content active">
             <div class="calendar-grid" id="calendar"></div>
-        </div>
 
-        <!-- Weather Info Card -->
-        <div class="weather-card" id="weatherCard" style="display: none;">
-            <h3>🌤️ 當日天氣資訊</h3>
-            <div class="weather-grid">
-                <div class="weather-item">
-                    <div class="weather-label">天氣預報</div>
-                    <div class="weather-value" id="weatherForecast">-</div>
+            <!-- Weather Info Card -->
+            <div class="weather-card" id="weatherCard" style="display: none;">
+                <h3>🌤️ 當日天氣資訊</h3>
+                <div class="weather-grid">
+                    <div class="weather-item">
+                        <div class="weather-label">天氣預報</div>
+                        <div class="weather-value" id="weatherForecast">-</div>
+                    </div>
+                    <div class="weather-item">
+                        <div class="weather-label">體感溫度</div>
+                        <div class="weather-value" id="feelsLike">-</div>
+                    </div>
+                    <div class="weather-item">
+                        <div class="weather-label">穿搭建議</div>
+                        <div class="weather-value" id="clothingSuggestion">-</div>
+                    </div>
+                    <div class="weather-item">
+                        <div class="weather-label">極光指數</div>
+                        <div class="weather-value" id="auroraForecast">-</div>
+                    </div>
                 </div>
-                <div class="weather-item">
-                    <div class="weather-label">體感溫度</div>
-                    <div class="weather-value" id="feelsLike">-</div>
-                </div>
-                <div class="weather-item">
-                    <div class="weather-label">穿搭建議</div>
-                    <div class="weather-value" id="clothingSuggestion">-</div>
-                </div>
-                <div class="weather-item">
-                    <div class="weather-label">極光指數</div>
-                    <div class="weather-value" id="auroraForecast">-</div>
+                <a href="#" id="weatherLink" target="_blank" class="weather-link">📱 查看完整天氣預報</a>
+            </div>
+
+            <div class="itinerary-section" id="itinerary">
+                <div class="no-selection">
+                    <div class="icon">📅</div>
+                    <p>點選日期查看當天行程</p>
                 </div>
             </div>
-            <a href="#" id="weatherLink" target="_blank" class="weather-link">📱 查看完整天氣預報</a>
-        </div>
-
-        <div class="itinerary-section" id="itinerary">
-            <div class="no-selection">
-                <div class="icon">📅</div>
-                <p>點選日期查看當天行程</p>
-            </div>
-        </div>
-
-        <!-- Summary Card -->
         </div>
 
         <!-- Summary Tab -->
         <div id="summaryTab" class="tab-content">
             <div class="summary-card">
                 <h3>💰 已付款項目總覽</h3>
-                <div class="summary-item">
-                    <span>租車 (9G & HE)</span>
-                    <span>TWD 43,743</span>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 1rem; margin: 1.5rem 0 1rem 0; font-weight: 700;">🚗 交通</h4>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.85rem; color: var(--text-mid); padding: 0.5rem 1rem; background: var(--sky-blue); border-radius: 8px;">
+                    <div>項目</div>
+                    <div style="text-align: right;">外幣</div>
+                    <div style="text-align: right;">台幣</div>
                 </div>
-                <div class="summary-item">
-                    <span>租車 (UG & KB)</span>
-                    <span>TWD 43,743</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>租車 (9G & HE) - Europcar</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 30,194</div>
                 </div>
-                <div class="summary-item">
-                    <span>201hotel 住宿</span>
-                    <span>ISK 33,150 (約 TWD 7,300)</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>租車 (UG & KB) - Europcar</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 34,545</div>
                 </div>
-                <div class="summary-item">
-                    <span>Blue View Cabins</span>
-                    <span>TWD 13,749</span>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 1rem; margin: 1.5rem 0 1rem 0; font-weight: 700;">🏨 住宿</h4>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.85rem; color: var(--text-mid); padding: 0.5rem 1rem; background: var(--sky-blue); border-radius: 8px;">
+                    <div>項目</div>
+                    <div style="text-align: right;">外幣</div>
+                    <div style="text-align: right;">台幣</div>
                 </div>
-                <div class="summary-item">
-                    <span>維克公寓</span>
-                    <span>TWD 15,630</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/17 - 201hotel</div>
+                    <div style="text-align: right;">ISK 33,150</div>
+                    <div style="text-align: right;">TWD 7,300</div>
                 </div>
-                <div class="summary-item">
-                    <span>Hali Country Hotel</span>
-                    <span>TWD 12,800</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/18 - 賽姆公寓 (HE)</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 10,938</div>
                 </div>
-                <div class="summary-item">
-                    <span>阿伯特科賓館</span>
-                    <span>TWD 14,546</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/19 - Middalskot Cottages</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 8,535</div>
                 </div>
-                <div class="summary-item">
-                    <span>Hörgsland Cottages</span>
-                    <span>TWD 9,805</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/19 - Blue View Cabins</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 13,749</div>
                 </div>
-                <div class="summary-item">
-                    <span>Hótel Vík (2晚)</span>
-                    <span>TWD 47,812</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/20 - Hotel Vatnsholt</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 9,101</div>
                 </div>
-                <div class="summary-item">
-                    <span>賽姆公寓式酒店</span>
-                    <span>TWD 10,954</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/21 - 維克公寓</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 15,630</div>
                 </div>
-                <div class="summary-item">
-                    <span>Snæfellsjökull Apartments</span>
-                    <span>TWD 7,771</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/22 - Old Cottage Reynivellir II</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 8,161</div>
                 </div>
-                <div class="summary-item">
-                    <span>住宿 (UG/KB/PG)</span>
-                    <span>EUR 220 (約 TWD 7,700)</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/22 - Hali Country Hotel</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 12,800</div>
                 </div>
-                <div class="summary-item">
-                    <span>Friðheimar 午餐</span>
-                    <span>已付款</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/22 - Hörgsland Cottages</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 9,805</div>
                 </div>
-                <div class="summary-item">
-                    <span>藍冰洞</span>
-                    <span>TWD 26,576</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/23-24 - Hótel Vík (2晚)</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 47,812</div>
                 </div>
-                <div class="summary-item">
-                    <span>Lava Show</span>
-                    <span>TWD 8,015</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/25 - 賽姆公寓 (9G)</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 10,954</div>
                 </div>
-                <div class="summary-item">
-                    <span>冰川健行</span>
-                    <span>TWD 31,992</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/26 - Snæfellsjökull Apartments</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 7,771</div>
                 </div>
-                <div class="summary-item">
-                    <span>Sky Lagoon</span>
-                    <span>ISK 69,950 (約 TWD 15,400)</span>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/27 - Hafnarfjörður Apt (UG/KB/PG)</div>
+                    <div style="text-align: right;">EUR 220</div>
+                    <div style="text-align: right;">TWD 7,700</div>
                 </div>
-                <div class="summary-total">
-                    <span>預估總花費</span>
-                    <span>約 TWD 317,500</span>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 1rem; margin: 1.5rem 0 1rem 0; font-weight: 700;">🎯 套裝行程</h4>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.85rem; color: var(--text-mid); padding: 0.5rem 1rem; background: var(--sky-blue); border-radius: 8px;">
+                    <div>項目</div>
+                    <div style="text-align: right;">外幣</div>
+                    <div style="text-align: right;">台幣</div>
                 </div>
-                <p class="summary-note">*匯率參考：1 ISK ≈ 0.22 TWD, 1 EUR ≈ 35 TWD</p>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/20 - Friðheimar 午餐</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">已付款</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/23 - 藍冰洞</div>
+                    <div style="text-align: right;">ISK 118,800</div>
+                    <div style="text-align: right;">TWD 26,136</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/23 - Lava Show</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 8,015</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/24 - 冰川健行</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 31,992</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; padding: 0.75rem 1rem; border-bottom: 1px solid var(--sky-blue);">
+                    <div>02/25 - Sky Lagoon</div>
+                    <div style="text-align: right;">ISK 69,950</div>
+                    <div style="text-align: right;">TWD 15,400</div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, var(--glacier-light) 0%, var(--sky-blue) 100%); border-radius: 12px; font-weight: 700; font-size: 1.1rem;">
+                    <div>預估總花費</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 316,500</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem; padding: 1rem; background: var(--accent-gold); border-radius: 12px; font-weight: 700; font-size: 1.1rem; color: white;">
+                    <div>每人平均</div>
+                    <div style="text-align: right;">-</div>
+                    <div style="text-align: right;">TWD 63,300</div>
+                </div>
+                <p class="summary-note" style="margin-top: 1rem;">*匯率參考：1 ISK ≈ 0.22 TWD, 1 EUR ≈ 35 TWD</p>
                 <p class="summary-note">*不含餐費、油費、購物</p>
             </div>
         </div>
@@ -995,24 +1052,24 @@
             <div class="team-card">
                 <h2>👥 團隊成員</h2>
                 <div class="team-member">
-                    <div class="member-name">Eugene (UG)</div>
-                    <div class="member-role">02/17-03/01</div>
-                </div>
-                <div class="team-member">
                     <div class="member-name">Caber (KB)</div>
-                    <div class="member-role">02/17-03/01</div>
+                    <div class="member-role">在冰島時間：02/17 - 03/01</div>
                 </div>
                 <div class="team-member">
-                    <div class="member-name">PG (PG)</div>
-                    <div class="member-role">02/17-02/28</div>
+                    <div class="member-name">Eugene (UG)</div>
+                    <div class="member-role">在冰島時間：02/17 - 03/01</div>
                 </div>
                 <div class="team-member">
                     <div class="member-name">George (9G)</div>
-                    <div class="member-role">02/17-02/28</div>
+                    <div class="member-role">在冰島時間：02/17 - 02/28</div>
                 </div>
                 <div class="team-member">
                     <div class="member-name">He</div>
-                    <div class="member-role">02/17-02/28</div>
+                    <div class="member-role">在冰島時間：02/17 - 02/28</div>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">Peggy (PG)</div>
+                    <div class="member-role">在冰島時間：02/18 - 02/28</div>
                 </div>
             </div>
 
@@ -1035,26 +1092,84 @@
             </div>
 
             <div class="team-card">
-                <h2>⚠️ 重要提醒</h2>
-                <div class="reminder-item">📋 需帶國際駕照、墨鏡、雪靴</div>
-                <div class="reminder-item">🧴 自備沐浴乳、牙膏牙刷</div>
-                <div class="reminder-item">🕐 注意各飯店 check-in/out 時間</div>
+                <h2>🎒 攜帶物品清單</h2>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 0.95rem; margin: 1rem 0 0.5rem 0; font-weight: 700;">🧴 沐浴用品（各自帶）</h4>
+                <div class="reminder-item">毛巾、沐浴乳、洗髮乳</div>
+                <div class="reminder-item">🪥 牙刷、牙膏（電動要手提）</div>
+                <div class="reminder-item">洗面乳、刮鬍刀（電動要手提）</div>
+                <div class="reminder-item">乳液、防曬、護唇膏、棉花棒</div>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 0.95rem; margin: 1rem 0 0.5rem 0; font-weight: 700;">🍜 食品</h4>
+                <div class="reminder-item">泡麵（各自帶）</div>
+                <div class="reminder-item">油 100ml、鹽 (UG)、洗碗精 (UG)</div>
+                <div class="reminder-item">水果刀 (HE)、食物剪刀 (HE)、夾鏈袋 (HE)</div>
+                <div class="reminder-item">餐具、茶包、保鮮盒（各自帶）</div>
+                <div class="reminder-item">快煮壺 (PG)、美祿 (KB)</div>
+                <div class="reminder-item">保冷袋 (淘寶)、保冷劑 (KB)</div>
+                <div class="reminder-item">開瓶/開罐器 (KB)</div>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 0.95rem; margin: 1rem 0 0.5rem 0; font-weight: 700;">👕 衣物（各自帶）</h4>
+                <div class="reminder-item">登山鞋、毛帽、手套、圍巾</div>
+                <div class="reminder-item">室內拖、泳衣、摺疊衣架</div>
+                <div class="reminder-item">衣物真空袋、洗衣球 (9G)</div>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 0.95rem; margin: 1rem 0 0.5rem 0; font-weight: 700;">💊 藥品</h4>
+                <div class="reminder-item">褪黑激素、酸痛貼布、抗組織胺 (UG)</div>
+                <div class="reminder-item">胃藥、止瀉藥、藥草茶 (UG)</div>
+                <div class="reminder-item">抗生素軟膏 (UG)</div>
+                <div class="reminder-item">退燒止痛、口罩、成藥（各自帶）</div>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 0.95rem; margin: 1rem 0 0.5rem 0; font-weight: 700;">📱 重要物品（各自帶）</h4>
+                <div class="reminder-item">📋 護照、台灣駕照、國際駕照</div>
+                <div class="reminder-item">🕶️ 墨鏡（防雪盲）</div>
+                <div class="reminder-item">❄️ 冰爪（防滑）</div>
+                <div class="reminder-item">行動電源、萬國插頭、車充線</div>
+                <div class="reminder-item">保險文件、行李秤</div>
+                
+                <h4 style="color: var(--glacier-blue); font-size: 0.95rem; margin: 1rem 0 0.5rem 0; font-weight: 700;">🔧 其他（各自帶）</h4>
+                <div class="reminder-item">環保袋、暖暖包 (KB)</div>
+                <div class="reminder-item">指甲刀、衛生紙、濕紙巾</div>
+                <div class="reminder-item">保溫瓶、手機防水套（泡溫泉用）</div>
+                <div class="reminder-item">垃圾袋、Insta 360 (9G)</div>
             </div>
 
             <div class="team-card">
-                <h2>🔗 常用連結</h2>
+                <h2>📱 必裝 APP</h2>
+                <div class="link-grid">
+                    <a href="https://www.parka.is/" target="_blank" class="info-link">
+                        <div class="link-icon">🅿️</div>
+                        <div class="link-text">Parka<br><span style="font-size: 0.75rem; opacity: 0.8;">停車繳費</span></div>
+                    </a>
+                    <a href="https://112.is/" target="_blank" class="info-link">
+                        <div class="link-icon">🚨</div>
+                        <div class="link-text">112 Iceland<br><span style="font-size: 0.75rem; opacity: 0.8;">緊急救援</span></div>
+                    </a>
+                    <a href="https://safetravel.is/" target="_blank" class="info-link">
+                        <div class="link-icon">✅</div>
+                        <div class="link-text">SafeTravel<br><span style="font-size: 0.75rem; opacity: 0.8;">旅遊安全</span></div>
+                    </a>
+                    <a href="#" target="_blank" class="info-link">
+                        <div class="link-icon">✨</div>
+                        <div class="link-text">Aurora<br><span style="font-size: 0.75rem; opacity: 0.8;">追極光</span></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <h2>🔗 常用網站</h2>
                 <div class="link-grid">
                     <a href="https://www.vedur.is/en/" target="_blank" class="info-link">
                         <div class="link-icon">🌤️</div>
-                        <div class="link-text">天氣預報</div>
+                        <div class="link-text">Vedur.is<br><span style="font-size: 0.75rem; opacity: 0.8;">天氣預報</span></div>
                     </a>
-                    <a href="https://safetravel.is/" target="_blank" class="info-link">
-                        <div class="link-icon">🚨</div>
-                        <div class="link-text">路況查詢</div>
+                    <a href="https://www.road.is/travel-info/road-conditions-and-weather/" target="_blank" class="info-link">
+                        <div class="link-icon">🚗</div>
+                        <div class="link-text">Umferdin<br><span style="font-size: 0.75rem; opacity: 0.8;">路況查詢</span></div>
                     </a>
                     <a href="https://en.vedur.is/weather/forecasts/aurora/" target="_blank" class="info-link">
-                        <div class="link-icon">✨</div>
-                        <div class="link-text">極光預報</div>
+                        <div class="link-icon">🌌</div>
+                        <div class="link-text">極光預報<br><span style="font-size: 0.75rem; opacity: 0.8;">Aurora Forecast</span></div>
                     </a>
                 </div>
             </div>
@@ -1072,25 +1187,35 @@
                         title: "9G & HE 抵達雷克雅維克機場",
                         location: "Keflavík International Airport",
                         coords: "63.985,-22.605",
-                        notes: "租車 Enterprise 11:30 | 保險、國際駕照",
+                        notes: "租車 Europcar 11:30",
                         paid: true,
-                        price: "TWD 43,743"
+                        price: "TWD 30,194"
                     },
                     {
                         time: "15:20",
                         title: "UG & KB 抵達雷克雅維克機場",
                         location: "Keflavík International Airport",
                         coords: "63.985,-22.605",
-                        notes: "租車 Enterprise 16:00",
+                        notes: "租車 Europcar 16:00",
                         paid: true,
-                        price: "TWD 43,743"
+                        price: "TWD 34,545"
+                    },
+                    {
+                        title: "Perlan 自然歷史博物館 (9G & HE)",
+                        location: "Perlan",
+                        url: "https://maps.app.goo.gl/o6jYPVBXcijtMNAk7",
+                        notes: "市區景點"
                     },
                     {
                         title: "採購",
-                        notes: "Bonus or Costco - 墨鏡、雪靴、現金"
+                        notes: "Bonus or Costco - 買食材、墨鏡、雪靴、現金"
                     },
                     {
-                        title: "住宿",
+                        title: "晚餐",
+                        notes: "外面吃"
+                    },
+                    {
+                        title: "住宿 - 201hotel",
                         location: "201hotel",
                         url: "https://maps.app.goo.gl/fRNDpTjfvJLWqq5u6",
                         notes: "沒廚房，需帶沐浴乳、牙膏牙刷",
@@ -1914,5 +2039,12 @@
             return weather;
         }
     </script>
+    
+    <!-- Version Info -->
+    <div style="text-align: center; padding: 2rem 1rem; color: var(--text-mid); font-size: 0.85rem; background: var(--ice-white);">
+        <p style="margin-bottom: 0.5rem;">🇮🇸 Iceland Adventure 2026</p>
+        <p style="font-weight: 600;">Version 1.1.0 | 2026.01.15 更新</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">嗚啦呀哈呀哈嗚啦</p>
+    </div>
 </body>
 </html>
